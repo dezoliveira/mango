@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   display: grid;
   place-items: center;
-  height: 100vh;
+  height: 90vh;
   font-family: 'Poppins', sans-serif;
   background: rgb(253,29,90);
   background: linear-gradient(90deg, rgba(253,29,90,1) 20%, rgba(252,164,69,1) 100%);
@@ -57,7 +61,7 @@ input {
   left: 0;
   width: 100%;
   height: 8vh;
-  background-color: #22c55e;
+  /* background-color: #22c55e; */
 
   display: flex;
   align-items: center;
@@ -65,24 +69,59 @@ input {
 
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+
+  overflow: hidden;
+
+  z-index: 1;
 }
 
 .chat-body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 25px;
   height: 92vh;
   padding-top: 8vh;
+
+  overflow-y: scroll;
+  max-height: 54vh;
 }
 
 .inputMessage {
-  width: 100%;
+  /* width: 100%; */
+
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+
   display: flex;
   gap: 10px;
+
+  padding: inherit;
+  padding: 10px;
+
+  z-index: 1;
+  overflow: hidden;
+
+  background-color: #fff;
 }
 
 .inputMessage input {
   width: 100%;
+}
+
+.messages {
+  border: 0;
+  padding: 15px;
+  border-radius: 15px;
+  opacity: .9;
+  background-color: #f5d0fe;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  display: none;
 }
 
 /* media queries */
